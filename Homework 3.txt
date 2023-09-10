@@ -1,0 +1,128 @@
+1.
+
+public class Homework3_1 {
+    // №3
+    // Реализовать программу, выводящую на экран результаты:
+    //  ● Сложения двух чисел
+    //● Вычитания двух чисел
+    //● Умножения двух чисел
+    //● Деления двух чисел
+    // Каждая из арифметических операций должна быть реализована как отдельный
+    //метод.
+
+
+        public static void main(String[] args) {
+            double num1 = 10.5;
+            double num2 = 5.0;
+
+            // Вызов методов и печать результатов
+            System.out.println("Результат сложения: " + add(num1, num2));
+            System.out.println("Результат вычитания: " + subtract(num1, num2));
+            System.out.println("Результат умножения: " + multiply(num1, num2));
+            System.out.println("Результат деления: " + divide(num1, num2));
+        }
+
+
+        public static double add(double num1, double num2) {
+            return num1 + num2;
+        }
+
+        public static double subtract(double num1, double num2) {
+            return num1 - num2;
+        }
+
+        public static double multiply(double num1, double num2) {
+            return num1 * num2;
+        }
+
+        public static double divide(double num1, double num2) {
+            if (num2 == 0) {
+                throw new ArithmeticException("Деление на ноль невозможно");
+            }
+            return num1 / num2;
+        }
+
+
+C:\Users\milao\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\lib\idea_rt.jar=62394:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\milao\IdeaProjects\Java\JavaBasisCourse220823m\out\production\JavaBasisCourse220823m homework3.Homework3_1
+Результат сложения: 15.5
+Результат вычитания: 5.5
+Результат умножения: 52.5
+Результат деления: 2.1
+
+Process finished with exit code 0
+
+2.
+ package homework3;
+
+import java.util.Scanner;
+
+public class Homework3_2 {
+    // №4
+    //Переведите число 333 из 16-ричной в 10-ричную
+
+    // Переведите число 819 из 10-ричной в 16-ричную
+
+    //101101 в двоичной, переведите в 10-ричную
+
+    //124 в десятичной, переведите в 2-ичную
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите первоначальную систему счисление = ");
+        int inNumbers = scanner.nextInt();
+
+        System.out.print("Введите число = ");
+        String inStr = scanner.next(); //1af
+        long inStrNumber = Long.parseLong(inStr,inNumbers);
+
+        System.out.print("В какую систему счисления преобразовать = ");
+        int outNumbers = scanner.nextInt();
+
+        System.out.println("Преобразованное число = " + Long.toString(inStrNumber, outNumbers));
+
+        ///
+//        long n16 = Long.parseLong("333", 16);
+//        System.out.println(n16);
+//        System.out.println(Long.toString(n16, 10));
+    }
+}
+
+C:\Users\milao\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\lib\idea_rt.jar=62413:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\milao\IdeaProjects\Java\JavaBasisCourse220823m\out\production\JavaBasisCourse220823m homework3.Homework3_2
+Введите первоначальную систему счисление = 22
+Введите число = 56
+В какую систему счисления преобразовать = 56
+Преобразованное число = 116
+
+Process finished with exit code 0
+
+
+3.
+
+public class Homework3_3 {
+
+
+
+     //№5
+    // Реализовать метод, который конвертирует указанную сумму в евро в сумму
+    // в долларах США
+
+    public static void main(String[] args) {
+        convertEuroToDollar(100, 1.17);
+    }
+
+    static void convertEuroToDollar(double amountInEuro, double exchangeRate) {
+        // Вычисляем сумму в долларах США, умножая сумму в евро на текущий курс
+        double amountInDollars = amountInEuro * exchangeRate;
+
+        // Печатаем результат конвертации в консоль, используя форматирование строк
+        System.out.printf("При курсе %.2f USD за один EUR, при обмене %.2f EUR, вы получите %.2f USD",
+                exchangeRate, amountInEuro, amountInDollars);
+    }
+
+}
+C:\Users\milao\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\lib\idea_rt.jar=62419:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.1\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\milao\IdeaProjects\Java\JavaBasisCourse220823m\out\production\JavaBasisCourse220823m homework3.Homework3_3
+При курсе 1,17 USD за один EUR, при обмене 100,00 EUR, вы получите 117,00 USD
+Process finished with exit code 0
+
+
+
